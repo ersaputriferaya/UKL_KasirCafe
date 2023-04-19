@@ -14,8 +14,8 @@ app.use('/user', userRoute)
 const mejaRoute = require("./routes/MejaRoute")
 app.use('/meja', mejaRoute)
 
-// const menuRoute = require("./routes/MenuRoute")
-// app.use('/menu', menuRoute)
+const menuRoute = require("./routes/MenuRoute")
+app.use('/menu', menuRoute)
 
 app.listen(PORT, () => {
     console.log(`Alhamdulillah Server of Wikusama Cafe runs on port ${PORT}`)
