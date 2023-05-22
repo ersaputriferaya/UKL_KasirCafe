@@ -8,10 +8,10 @@ const userController = require("../controllers/user")
 const auth = require("../auth/auth")
 
 app.post("/login", userController.login)
-app.get("/getAll", auth.authVerify, userController.getAlluser)
-app.post("/find", auth.authVerify, userController.findUser)
-app.post("/", auth.authVerify, userController.addUser)
-app.delete("/:id", auth.authVerify, userController.deleteUser)
-app.put("/:id", auth.authVerify, userController.updateUser)
+app.get("/getAll", userController.getAlluser)
+app.post("/find", userController.findUser)
+app.post("/", userController.addUser)
+app.delete("/:id", userController.deleteUser)
+app.put("/:id", userController.updateUser)
 
 module.exports = app

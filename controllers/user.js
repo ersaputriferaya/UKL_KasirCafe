@@ -142,7 +142,7 @@ exports.deleteUser = async (request, response) => {
     user.destroy({ where: { id: id_user } }).then((result) => {
         return response.json({
             success: true,
-            message: "pengguna data telah dihapus di mana id_user :" + id_user,
+            message: "pengguna data telah dihapus di mana id_user : " + id_user,
         });
     })
         .catch((error) => {

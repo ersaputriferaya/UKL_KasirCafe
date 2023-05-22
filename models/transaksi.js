@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.user)
       this.belongsTo(models.meja)
       this.hasMany(models.detail_transaksi, {
         foreignKey: `id_transaksi`, as: "detail_transaksi"
@@ -19,9 +20,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   transaksi.init({
     tgl_transaksi: DataTypes.DATE,
+    id_user: DataTypes.INTEGER,
     id_meja: DataTypes.INTEGER,
     nama_pelanggan: DataTypes.STRING,
-    status: DataTypes.ENUM('belum_bayar','lunas')
+    status: DataTypes.ENUM('belum_bayar','lunas'),
+    total_bayar: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'transaksi',
